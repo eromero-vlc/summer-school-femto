@@ -19,14 +19,14 @@ For Python 3.7+:
 
 1. (Optional, but encouraged) Create a new environment:
 
-```
+```bash
 python -mvenv py3  # create a new dir with that name
 . py3/bin/activate # activate the environment
 ```
 
 2. Install `numba` and `mpi4py`
 
-```
+```bash
 pip install numba
 pip install mpi4py-mpich
 ```
@@ -37,7 +37,7 @@ Exercise: check that Collatz conjecture holds for all numbers smaller than 99999
 As a check, return the total number of iterations in module 4.
 
 Example in C:
-```
+```C
 int main() {
   unsigned int s = 0;
   for (int i = 2; i < 9999999; ++i) {
@@ -62,7 +62,7 @@ time ./collatz
 ```
 
 Example in Python:
-```
+```Python
 import sys
 
 def f():
@@ -90,7 +90,7 @@ time python collatz.py
 ```
 
 Example in Python with numba:
-```
+```Python
 from numba import njit
 import sys
 
@@ -121,7 +121,7 @@ time python collatz-numba.py
 
 ### Message Passing Interface
 
-```python
+```Python
 from mpi4py import MPI
 
 comm = MPI.COMM_WORLD
